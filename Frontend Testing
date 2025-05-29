@@ -1,0 +1,31 @@
+Task 1: Load Testing a Web Application Using JMeter
+
+Steps:
+
+Download and Install JMeter:
+Go to the official Apache JMeter website and download the latest version. Install it on your computer.
+
+Open JMeter:
+Launch the JMeter application. You will see the test plan window.
+
+Create a Test Plan:
+Right-click on the Test Plan → Add → Threads (Users) → Thread Group. This represents the number of virtual users you want to simulate.
+
+Configure Thread Group:
+Set the number of users (threads), ramp-up period (time to start all users), and loop count (how many times to repeat the test).
+
+Add HTTP Request:
+Right-click on the Thread Group → Add → Sampler → HTTP Request. Enter the server name or IP and the path of the web application you want to test.
+
+Add Listeners to View Results:
+Right-click on Thread Group → Add → Listener → View Results Tree / Summary Report / Aggregate Report. These will show test results and metrics.
+
+Run the Test:
+Click the green start button to run the load test.
+
+Analyze Results:
+Look at the reports and graphs to find response times, throughput, error rates, etc. Identify any delays or failures indicating performance bottlenecks.
+
+Write Your Conclusion:
+Summarize which parts of the application struggled under load and suggest possible improvements (like optimizing code, increasing server resources, etc.).
+
