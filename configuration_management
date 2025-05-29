@@ -1,0 +1,68 @@
+1. Research and Compare Configuration Management Tools (Ansible, Puppet, Chef)
+
+*Ansible
+
+Language: YAML (Playbooks)
+
+Agentless: Yes
+
+Ease of Use: Very simple and human-readable
+
+Best Use Case: Small to medium-scale environments, cloud automation, dynamic infrastructures
+
+Advantages: Quick to set up, easy to learn, integrates well with CI/CD pipelines
+
+*Puppet
+
+Language: Puppet DSL (similar to Ruby)
+
+Agentless: No (requires agents)
+
+Ease of Use: Moderate complexity
+
+Best Use Case: Large-scale environments with stable infrastructure
+
+Advantages: Strong reporting, robust community, well-suited for enterprise environments
+
+*Chef
+
+Language: Ruby DSL
+
+Agentless: Yes (with Chef client or workstation setup)
+
+Ease of Use: Complex, especially for non-developers
+
+Best Use Case: Complex infrastructures where custom scripting is required
+
+Advantages: Highly customizable, strong ecosystem, good for code-driven infrastructure
+
+2. Extend CI Pipeline to Include CD Using Jenkins and Implement Blue-Green Deployment
+Steps to Implement Continuous Delivery with Blue-Green Deployment in Jenkins:
+
+CI Setup:
+
+Jenkins pulls code from GitHub
+
+Builds app (Maven/pip/npm)
+
+Runs tests automatically
+
+Blue-Green Strategy:
+
+Set up two environments: Blue (live) and Green (idle/test)
+
+Jenkins deploys the new version to Green
+
+Perform health checks on Green
+
+If all tests pass, switch traffic from Blue to Green using a load balancer
+
+Keep Blue as a backup (easy rollback)
+
+Benefits:
+
+Zero downtime
+
+Safer deployments
+
+Easier rollback if issues occur
