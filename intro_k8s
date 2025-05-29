@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Assignment: Introduction to Kubernetes
+
+# Task 1: Kubernetes Setup
+echo "Task 1: Setting up Kubernetes Cluster"
+echo "Using Minikube to start a local Kubernetes cluster..."
+minikube start
+kubectl get nodes
+
+# Task 2: Application Deployment
+echo "Task 2: Deploying a simple application to Kubernetes"
+kubectl create deployment hello-app --image=k8s.gcr.io/echoserver:1.4
+kubectl expose deployment hello-app --type=NodePort --port=8080
+kubectl get pods
+kubectl get svc
+
+# Task 3: Resource Management
+echo "Task 3: Managing Kubernetes Resources"
+echo "Scaling deployment to 3 replicas..."
+kubectl scale deployment hello-app --replicas=3
+kubectl get deployments
+kubectl get pods
+
+# Task 4: Helm Charts
+echo "Task 4: Installing and using Helm"
+echo "Installing Helm (if not already installed)..."
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+echo "Creating a Helm chart for the application..."
+helm create hello-chart
+
+echo "Installing the Helm chart..."
+helm install hello-release ./hello-chart
+
+helm list
